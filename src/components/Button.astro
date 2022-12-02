@@ -1,0 +1,27 @@
+---
+const styles = {
+  light: "bg-rg-light",
+  dark: "bg-black text-white",
+};
+
+interface Props {
+  headerTag: string;
+  text: string;
+  href?: string;
+  type: "light" | "dark";
+}
+
+const { headerTag, text, href, type } = Astro.props as Props;
+
+const HTag = headerTag;
+---
+
+<HTag
+  {href}
+  class:list={[
+    "py-5 px-8 max-w-fit hover:opacity-80 transition-opacity text-base",
+    styles[type],
+  ]}
+>
+  {text}
+</HTag>

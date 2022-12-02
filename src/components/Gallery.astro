@@ -1,0 +1,39 @@
+---
+import { Image } from "@astrojs/image/components";
+import Heading from "./Heading.astro";
+import ImageGrid from "./ImageGrid.astro";
+import Section from "./Section.astro";
+
+const images = [
+  "/images/gallery-1.jpg",
+  "/images/gallery-2.jpg",
+  "/images/gallery-3.jpeg",
+  "/images/gallery-4.jpg",
+  "/images/gallery-5.jpg",
+  "/images/gallery-6.jpg",
+];
+---
+
+<Section
+  sectionTitle="Gallery section"
+  classes="grid gap-12 md:gap-20 place-items-center"
+>
+  <Heading headerTag="h2" headerStyles="h1">
+    <a href="#" class="underline block text-center">Order To Go Here.</a>
+  </Heading>
+
+  <ImageGrid>
+    {
+      images.map((img) => (
+        <Image
+          src={img}
+          width="600"
+          height="600"
+          alt="coffee stuffs"
+          format="avif"
+          quality={80}
+        />
+      ))
+    }
+  </ImageGrid>
+</Section>

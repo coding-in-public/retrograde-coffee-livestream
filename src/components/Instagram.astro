@@ -1,0 +1,35 @@
+---
+import Heading from "./Heading.astro";
+import ImageGrid from "./ImageGrid.astro";
+import Section from "./Section.astro";
+
+import { Image } from "@astrojs/image/components";
+
+import instagramImages from "../data/instagram";
+---
+
+<Section
+  sectionTitle="Instagram Images"
+  classes="grid gap-12 md:gap-20 place-items-center"
+>
+  <Heading headerTag="h2" headerStyles="h2" classes="text-center">
+    follow us <a
+      class="underline"
+      href="https://www.instagram.com/retrogradecoffee">@retrogradecoffee</a
+    >
+  </Heading>
+  <ImageGrid>
+    {
+      instagramImages.map((img) => (
+        <Image
+          src={img.src}
+          width="600"
+          height="600"
+          alt={img.alt}
+          format="avif"
+          quality={80}
+        />
+      ))
+    }
+  </ImageGrid>
+</Section>

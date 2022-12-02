@@ -1,0 +1,18 @@
+{
+  "phone": {
+    "text": "(615) 964-7770",
+    "href": "tel:+16159647770"
+  },
+  "email": {
+    "text": "thirsty@retrogradecoffee.com",
+    "href": "mailto:thirsty@retrogradecoffee.com"
+  },
+  "location": {
+    "text": "1305 Dickerson Pike <br>E. Nashville",
+    "href": "https://www.google.com/maps/dir//retrograde+coffee+nashville"
+  },
+  "hours": {
+    "M-S": "Mon → Sat • 7A to 5P",
+    "Sunday": "Sunday • 8A to 4P"
+  }
+}

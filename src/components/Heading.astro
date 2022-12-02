@@ -1,0 +1,21 @@
+---
+const styles = {
+  h1: "text-4xl tracking-wide",
+  h2: "text-3xl tracking-wide",
+  upper: "uppercase",
+};
+
+interface Props {
+  headerTag: string;
+  headerStyles?: "h1" | "h2" | "upper";
+  classes?: string;
+}
+
+const { headerTag, classes, headerStyles } = Astro.props as Props;
+
+const HLevel = headerTag;
+---
+
+<HLevel class:list={[classes, styles[headerStyles]]}>
+  <slot />
+</HLevel>

@@ -1,0 +1,47 @@
+---
+import { Image } from "@astrojs/image/components";
+import contactInfo from "../data/contact.json";
+import Heading from "./Heading.astro";
+import Section from "./Section.astro";
+---
+
+<Section
+  sectionTitle="Contact Us"
+  classes="grid gap-12 max-w-screen-lg mx-auto"
+>
+  <Heading headerTag="h2" headerStyles="upper" classes="sr-only"
+    >Contact Us</Heading
+  >
+  <div class="grid gap-8 text-center">
+    <Heading headerTag="h3" headerStyles="upper">Contact</Heading>
+    <div class="grid gap-2">
+      <a class="underline" href={contactInfo.phone.href}
+        >{contactInfo.phone.text}</a
+      >
+      <a class="underline" href={contactInfo.email.href}
+        >{contactInfo.email.text}</a
+      >
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row justify-center md:justify-between">
+    <div class="grid gap-8 text-center">
+      <Heading headerTag="h3" headerStyles="upper">Hours</Heading>
+      <div class="grid gap-2">
+        <p>{contactInfo.hours["M-S"]}</p>
+        <p>{contactInfo.hours.Sunday}</p>
+      </div>
+    </div>
+    <div class="grid gap-8 text-center">
+      <Heading headerTag="h3" headerStyles="upper">Location</Heading>
+      <div class="grid gap-2">
+        <a
+          class="underline"
+          href={contactInfo.location.href}
+          set:html={contactInfo.location.text}
+        />
+      </div>
+    </div>
+  </div>
+  <Image src="/images/map.png" width="650" height="450" alt="map" />
+</Section>

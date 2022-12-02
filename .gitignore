@@ -1,3 +1,6 @@
+# remove images for copyright reasons
+public/images
+
 # build output
 dist/
 .output/
